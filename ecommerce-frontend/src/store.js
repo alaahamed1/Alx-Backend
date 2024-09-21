@@ -1,5 +1,3 @@
-// store.js or store/index.js
-
 import { createStore } from 'vuex';
 import router from './router';
 
@@ -18,6 +16,9 @@ export default createStore({
     ADD_TO_BASKET(state, product) {
       state.basket.push(product);
     },
+    REMOVE_FROM_BASKET(state, productId) {
+      state.basket = state.basket.filter(item => item.id !== productId);
+    },
   },
   actions: {
     login({ commit }, token) {
@@ -35,11 +36,12 @@ export default createStore({
     addToBasket({ commit }, product) {
       commit('ADD_TO_BASKET', product);
     },
-    removeFromBasket({ commit }, index) {
-      commit('REMOVE_FROM_BASKET', index);
+    removeFromBasket({ commit }, productId) {
+      commit('REMOVE_FROM_BASKET', productId);
     }
   },
   getters: {
-    basketItems: state => state.basket
+    basketItems: state => state.basket,
+    basketItemCount: state => state.basket.length
   }
-})
+});

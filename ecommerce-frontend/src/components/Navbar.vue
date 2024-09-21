@@ -2,7 +2,7 @@
   <nav id="navbar" class="absolute  z-50 w-full text-neutral-800">
     <div
       class="flex flex-col max-w-screen-xl px-8 mx-auto lg:items-center lg:justify-between lg:flex-row py-4">
-      <h1 class="text-4xl cursor-pointer font-bold text-mainColor">Power</h1>
+      <h1 class="text-4xl cursor-pointer font-bold text-textColor">Power</h1>
       <div
         class="flex flex-col lg:flex-row items-center space-x-6 xl:space-x-8">
         <ul
@@ -10,37 +10,42 @@
           <li v-if="isLoggedIn" class="relative">
             <router-link
               to="/"
-              class="text-sm text-[#666666] hover:text-gray-900"
+              class="text-sm text-textColor hover:border-lightYellow hover:border-b-2 py-2 hover:text-mainColor"
               >Home</router-link>
           </li>
 
           <li v-if="isLoggedIn" class="relative">
             <router-link
               to="/ProductList"
-              class="text-sm text-[#666666] hover:text-gray-900">Product List</router-link>
+              class="text-sm text-textColor hover:border-lightYellow hover:border-b-2 py-2 hover:text-mainColor">Product List</router-link>
           </li>
 
           <li v-if="isLoggedIn" class="relative">
             <router-link
               to="/about"
-              class="text-sm text-[#666666] hover:text-gray-900"
+              class="text-sm text-textColor hover:border-lightYellow hover:border-b-2 py-2 hover:text-mainColor"
               >About Us</router-link
             >
           </li>
         </ul>
       </div>
       <ul class="flex space-x-4">
-        <li><router-link v-if="isLoggedIn" to="/basket">Basket</router-link></li>
+        <li v-if="isLoggedIn" class="relative">
+          <router-link to="/basket" class="relative">
+            <font-awesome-icon class="w-10 flex justify-center align-middle h-7 text-subColor" :icon="['fas', 'cart-arrow-down']" />
+            <span v-if="basketItemCount > 0" class="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">{{ basketItemCount }}</span>
+          </router-link>
+        </li>
         <li v-if="!isLoggedIn" class="relative">
           <router-link
             to="/login"
-            class="px-6 xl:px-9 py-2 mt-2 bg-inherit text-gradient font-semibold rounded-2xl text-slate-600 border border-mainColor"
+            class="px-6 xl:px-9 py-2 mt-2 bg-inherit text-gradient font-semibold rounded-2xl text-slate-600 border border-textColor"
             >Login</router-link>
         </li>
         <li v-if="!isLoggedIn" class="relative">
           <router-link
             to="/register"
-            class="px-6 xl:px-9 py-2 mt-2 bg-gradient-to-r font-semibold rounded-2xl from-[#468ef9] to-mainColor text-white"
+            class="px-6 xl:px-9 py-2 mt-2 bg-gradient-to-r font-semibold rounded-2xl from-[#468ef9] to-textColor text-white"
             >Register</router-link
           >
         </li>
@@ -48,8 +53,8 @@
           <a
             href="#"
             @click="logout"
-            class="px-6 xl:px-9 py-2 mt-2 bg-inherit text-gradient text-mainColor font-semibold rounded-2xl border border-mainColor"
-            >Logout</a
+            class="px-6 xl:px-9 py-2 mt-2 bg-inherit text-gradient text-white hover:bg-lightYellow hover:border-lightYellow hover:text-gradientColor font-semibold rounded-xl border border-textColor bg-textColor transition duration-[300ms]">
+            Logout</a
           >
         </li>
       </ul>
@@ -57,7 +62,7 @@
   </nav>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   name: "BaseNavbar",
@@ -69,6 +74,7 @@ export default {
   },
   computed: {
     ...mapState(["isLoggedIn"]),
+    ...mapGetters(["basketItemCount"]),
   },
   methods: {
     dropdownToggler() {
