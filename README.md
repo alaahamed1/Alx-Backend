@@ -17,7 +17,7 @@ To set up the project locally:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/project-name.git
+    git clone https://github.com/alaahamed1/Alx-Backend.git
     ```
 
 2. **Install dependencies:**
@@ -29,6 +29,11 @@ To set up the project locally:
     ```
 
 3. **Set up the `.env` file** and update the necessary environment variables.
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    nano .env
+    ```
 
 4. **Run the project:**
 
@@ -37,6 +42,10 @@ To set up the project locally:
     npm run dev
     ```
 
+5. **For the frontend:**
+```bash
+    npm run serve
+```
 ---
 
 ## **Usage**
@@ -46,7 +55,8 @@ This project allows users to explore solar energy potential in various desert re
 - Real-time data visualization using solar energy APIs.
 - An interactive UI that simulates energy output under different environmental conditions.
 
-Once set up, access the local environment at `http://localhost:8000`.
+Once set up, access the local environment at `http://localhost:8000` for the backend
+and `http://localhost:8080` for the frontend.
 
 ---
 
@@ -106,5 +116,5 @@ Growing up in an arid region, I witnessed the environmental challenges faced by 
 
 ## **Screenshots**
 
-![App Screenshot](path/to/screenshot.png)
+![App Screenshot](path/to/LandingPage.png)
 
