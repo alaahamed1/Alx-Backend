@@ -100,7 +100,7 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ---
 
-## **Technical Details (Optional)**
+## **Technical Details**
 
 This project leverages Vue.js for the frontend due to its reactivity and smooth user experience. For the backend, Laravel was chosen for its robust handling of API integrations and seamless data flow management.
 
