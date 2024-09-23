@@ -5,9 +5,9 @@
 
 This project focuses on transforming desert areas into sustainable green spaces using solar energy. The platform simulates real-time solar energy potential in different regions, providing users with insights into how renewable energy can drive environmental rehabilitation.
 
--   **Deployed Site**: [Link to live project](#)
--   **Final Project Blog**: [Blog Post](#)
--   **Author**: [Your LinkedIn Profile](#)
+-   **Deployed Site**: [--](#)
+-   **Final Project Blog**: [LinkedIn Post](https://www.linkedin.com/posts/a-laa-hamed-92a6b9233_renewableenergy-solarenergy-fullstackdevelopment-activity-7243961953688162306-TMg8?utm_source=share&utm_medium=member_desktop)
+-   **Author**: [LinkedIn Profile](https://www.linkedin.com/in/alaa-hamed-92a6b9233)
 
 ----------
 
