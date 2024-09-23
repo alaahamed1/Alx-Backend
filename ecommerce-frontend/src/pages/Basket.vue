@@ -4,13 +4,11 @@
 
     <div
       v-if="basketItems.length > 0"
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-    >
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div
         v-for="item in basketItems"
         :key="item.id"
-        class="flex p-6 border rounded-lg transition duration-500 hover:shadow-2xl shadow-md"
-      >
+        class="flex p-6 border rounded-lg transition duration-500 hover:shadow-2xl shadow-md">
         <!-- <img :src="item.image" alt="item.name" class="w-24 h-24 object-cover mr-4" /> -->
         <div class="flex flex-col justify-between flex-grow">
           <h3 class="font-semibold text-textColor text-base">
@@ -48,8 +46,7 @@
       </h3>
       <button
         @click="checkout"
-        class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg"
-      >
+        class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg">
         Proceed to Checkout
       </button>
     </div>
@@ -86,12 +83,28 @@ export default {
     async checkout() {
       try {
         const token = localStorage.getItem("auth_token");
+
+        // Log the token for debugging
+        console.log('Token:', token);
+
+        if (!token) {
+          throw new Error("No authentication token found");
+        }
+
+        const basketData = {
+          items: this.basketItems.map(item => ({
+            id: item.id,
+            quantity: item.quantity
+          })),
+          totalPrice: this.totalPrice
+        };
+
+        // Log the basketData for debugging
+        console.log('basketData:', basketData);
+
         const response = await axios.post(
           "http://localhost:8000/api/checkout",
-          {
-            items: this.basketItems,
-            totalPrice: this.totalPrice,
-          },
+          basketData,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -100,7 +113,11 @@ export default {
         );
         console.log(response.data.message);
       } catch (error) {
-        console.error("Checkout failed:", error);
+        if (error.response && error.response.status === 401) {
+          console.error("Unauthorized: Check if the token is valid and not expired.");
+        } else {
+          console.error("Checkout failed:", error);
+        }
       }
     },
   },
