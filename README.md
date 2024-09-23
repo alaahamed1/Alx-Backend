@@ -87,12 +87,6 @@ Contributions are welcome! Here's how you can contribute:
 
 ---
 
-## **Related Projects**
-
-- [Renewable Energy Dashboard](#)
-- [Solar Panel Efficiency Simulator](#)
-
----
 
 ## **License**
 
