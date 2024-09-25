@@ -4,7 +4,6 @@
 
 This project aims to transform desert areas into sustainable green spaces by harnessing solar energy. It offers a platform that simulates the real-time solar energy potential of various regions, helping users explore how renewable energy can drive environmental restoration.
 
-- **Deployed Site**: [--](#)
 - **Final Project Blog**: [LinkedIn Post](https://www.linkedin.com/posts/a-laa-hamed-92a6b9233_renewableenergy-solarenergy-fullstackdevelopment-activity-7243961953688162306-TMg8?utm_source=share&utm_medium=member_desktop)
 - **Author**: [Alaa Hamed](https://www.linkedin.com/in/alaa-hamed-92a6b9233)
 
@@ -97,10 +96,6 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 ## **Technical Details**
 
 This project leverages Vue.js for the frontend due to its reactivity and smooth user experience. For the backend, Laravel was chosen for its robust handling of API integrations and seamless data flow management.
-
-### **Key Challenges**
-
-One of the key challenges was implementing real-time solar energy data simulation. This was achieved by caching API responses in the Laravel backend, improving performance and minimizing delays.
 
 ### **Inspiration and Vision**
 
