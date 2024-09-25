@@ -6,6 +6,8 @@ import About from "./pages/about.vue";
 import Home from "./pages/Home.vue";
 import MainLayout from "./pages/MainLayout.vue";
 import Basket from "./pages/Basket.vue";
+import Success from './pages/Success.vue';
+
 
 const routes = [
     {
@@ -42,6 +44,11 @@ const routes = [
         component: Basket,
         meta: {public: true}
     },
+    {
+        path: '/success',
+        name: 'Success',
+        component: Success
+      }
 ];
 const router = createRouter({
     history: createWebHistory(),

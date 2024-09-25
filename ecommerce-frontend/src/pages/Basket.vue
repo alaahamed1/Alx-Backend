@@ -112,6 +112,8 @@ export default {
           }
         );
         console.log(response.data.message);
+
+        // Redirect to the success page
       } catch (error) {
         if (error.response && error.response.status === 401) {
           console.error("Unauthorized: Check if the token is valid and not expired.");
@@ -119,6 +121,7 @@ export default {
           console.error("Checkout failed:", error);
         }
       }
+      this.$router.push({ name: 'Success' });
     },
   },
 };

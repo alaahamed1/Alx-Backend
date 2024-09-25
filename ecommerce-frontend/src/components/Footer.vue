@@ -4,14 +4,10 @@
         <div class="grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
           <div
             class="md:w-full lg:w-full w-full sm:w-1/2 xl:w-fit flex flex-col sm:flex-row sm:px-6 py-6 sm:py-12 sm:space-x-10 sm:border-r-0 border-[#DDDDDD]">
-            <!-- <div class="sm:hidden xl:block mb-6 sm:mb-0"> -->
               <a href="#">
                 <h1 class="text-4xl cursor-pointer font-bold text-[#fee674]" >Power</h1>
               </a>
-            <!-- </div> -->
           </div>
-
-
 
           <div
             class="md:w-full md:border-t lg:w-full w-full sm:w-1/2 xl:w-fit sm:px-16 py-6 sm:py-12 border-t sm:border-t-0 sm:border-r-0 border-[#DDDDDD]">
@@ -21,7 +17,6 @@
             </ul>
           </div>
 
-
           <div
             class="md:w-full lg:w-full lg:border-r w-full sm:w-1/2 xl:w-fit sm:px-16 py-6 sm:py-12 border-t sm:border-t xl:border-r border-[#DDDDDD]">
           <ul class="space-y-4 flex flex-col text-[#BCDBF1]">
@@ -29,7 +24,6 @@
               <li url="#" >About Us</li>
             </ul>
           </div>
-
 
           
           <div

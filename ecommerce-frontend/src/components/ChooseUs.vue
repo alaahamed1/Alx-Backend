@@ -54,6 +54,3 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Additional styles for fine-tuning */
-</style>

@@ -1,7 +1,6 @@
 <template>
     <div>
     <Home/>
-    <!-- <Slider/> -->
     <ChooseUs/>
     <SustainableSec/>
     <TechnologySection/>
@@ -22,7 +21,6 @@ import SustainableSec from '@/components/SustainableSec.vue';
       ChooseUs,
       SustainableSec,
       TechnologySection,
-      // Slider,
     }
   };
   </script>
